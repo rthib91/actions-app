@@ -30,3 +30,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run script
       run: ./script.sh
+  needs:
+    needs: script
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: needs
+        run: ./script.sh
