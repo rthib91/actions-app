@@ -24,4 +24,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run Dockerfile
-        run: docker build . 
+        run: docker build .
+  script:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run script
+      run: bash script.sh
