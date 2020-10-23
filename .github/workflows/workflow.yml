@@ -23,12 +23,12 @@ jobs:
       - name: Run Dockerfile
       - run: docker build .
 
-  script:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run script
-      - run: ./script.sh
+  # script:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Run script
+  #     - run: ./script.sh
 
   # needs1:
   #   needs: script
