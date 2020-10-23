@@ -38,12 +38,10 @@ jobs:
       - name: needs
         run: ./script.sh
 
-  # npm:
-  #   needs: script
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #     - name: npm/node
-  #     - run: npm --version
-  #     - run: node --version
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install -g bats
+      - run: bats -v
