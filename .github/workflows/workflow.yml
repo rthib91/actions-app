@@ -17,33 +17,33 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Run Dockerfile
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a single command using the runners shell
+      - name: Run Dockerfile
         run: docker build .
 
   script:
     runs-on: ubuntu-latest
     steps:
-      - name: Run script
       - uses: actions/checkout@v2
+      - name: Run script
         run: ./script.sh
 
   needs1:
     needs: script
     runs-on: ubuntu-latest
     steps:
-      - name: needs
       - uses: actions/checkout@v2
+      - name: needs
         run: ./script.sh
 
   npm:
     needs: script
     runs-on: ubuntu-latest
     steps:
-      - name: npm/node
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - name: npm/node
       - run: npm --version
       - run: node --version
