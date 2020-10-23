@@ -30,13 +30,13 @@ jobs:
       - name: Run script
       - run: ./script.sh
 
-  needs1:
-    needs: script
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: needs
-      - run: ./script.sh
+  # needs1:
+  #   needs: script
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: needs
+  #     - run: ./script.sh
 
   # npm:
   #   needs: script
