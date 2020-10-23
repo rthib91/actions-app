@@ -32,14 +32,14 @@ jobs:
 
   needs1:
     needs: script
-    runs-on: windows-latest
+    runs-on: macos-11.0
     steps:
       - uses: actions/checkout@v2
       - name: needs
         run: ./script.sh
 
-  check-bats-version:
-    runs-on: macos-11.0
+  npm-node-version:
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
