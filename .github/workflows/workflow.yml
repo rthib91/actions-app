@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run script
-      - env:
+        env:
         HELLO: "hello"
         WORLD: "world"
         run: ./script.sh
