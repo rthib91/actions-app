@@ -41,6 +41,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run script
+        env:
+          super_secret: ${{ secrets.SUPERSECRET }}
         run: ./secret.sh
 
   # Windows executes some npm/node
