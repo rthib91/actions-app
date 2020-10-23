@@ -35,6 +35,7 @@ jobs:
         run: ./script.sh
 
   # Job needs earlier job
+  # Uses secret from GitHub repository
   needs-script:
     needs: script
     runs-on: macos-11.0
