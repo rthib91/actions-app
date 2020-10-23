@@ -26,9 +26,9 @@ jobs:
   script:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run script
-    - run: ./script.sh
+      - uses: actions/checkout@v2
+      - name: Run script
+      - run: ./script.sh
 
   needs1:
     needs: script
