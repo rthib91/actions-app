@@ -12,7 +12,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  docker-build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -23,14 +23,19 @@ jobs:
       - name: Run Dockerfile
         run: docker build .
 
+  # Bash script
   script:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run script
+      - env:
+        HELLO: "hello"
+        WORLD: "world"
         run: ./script.sh
 
-  needs1:
+  # Job needs earlier job
+  needs-script:
     needs: script
     runs-on: macos-11.0
     steps:
@@ -38,6 +43,7 @@ jobs:
       - name: needs
         run: ./script.sh
 
+  # Windows executes some npm/node
   npm-node-version:
     runs-on: windows-latest
     steps:
