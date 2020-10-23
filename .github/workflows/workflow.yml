@@ -23,7 +23,7 @@ jobs:
       - name: Run Dockerfile
         run: docker build .
 
-  # Bash script
+  # Bash script with env
   script:
     runs-on: ubuntu-latest
     steps:
@@ -40,8 +40,8 @@ jobs:
     runs-on: macos-11.0
     steps:
       - uses: actions/checkout@v2
-      - name: needs
-        run: ./script.sh
+      - name: Run script
+        run: ./secret.sh
 
   # Windows executes some npm/node
   npm-node-version:
