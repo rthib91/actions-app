@@ -76,7 +76,6 @@ jobs:
   default-env:
     runs-on: ubuntu-latest
     steps:
-      - name: default-env
       - shell: bash
         run: |
           echo "$GITHUB_ACTOR started this script"
