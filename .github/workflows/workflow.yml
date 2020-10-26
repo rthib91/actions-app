@@ -41,7 +41,7 @@ jobs:
     runs-on: macos-11.0
     steps:
       - name: secret
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
         run: ./secret.sh "$SUPER_SECRET" > output.txt
