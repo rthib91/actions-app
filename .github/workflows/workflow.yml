@@ -42,9 +42,9 @@ jobs:
     steps:
       - name: secret
         uses: actions/checkout@v2
+      - name: run secret
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
-      - name: run secret
         run: ./secret.sh "$SUPER_SECRET" > output.txt
       - name: artifact
         uses: actions/upload-artifact@v1
