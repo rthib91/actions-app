@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SUPER_SECRET=$1
+secret=$1
 
 # Trying to echo secret
-echo "$SUPER_SECRET"
+echo "$secret"
 
 # Validating secret
-[[ "$SUPER_SECRET" == "secret value from secret" ]] && echo "Secret is good" || echo "Secret is not good"
+[[ "$secret" == "secret value from secret" ]] && echo "Secret is good" || echo "Secret is not good"
