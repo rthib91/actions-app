@@ -40,11 +40,12 @@ jobs:
     needs: script
     runs-on: macos-11.0
     steps:
-      - uses: actions/upload-artifact@v1
-      - name: Run script
+      - shell: bash
+      - name: Run script and ouput secret file
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
         run: echo ${./secret.sh} > output.txt
+        uses: actions/upload-artifact@v1
         with:
           name: secret-output
           path: output.txt
