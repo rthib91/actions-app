@@ -43,7 +43,7 @@ jobs:
       - shell: bash
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
-        run: echo ${./secret.sh} > output.txt
+        run: echo "Hello World" > output.txt
       - name: Run script and ouput secret file
         uses: actions/upload-artifact@v1
         with:
