@@ -43,7 +43,7 @@ jobs:
       - shell: bash
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
-        run: echo "Hello World" > output.txt
+        run: ./secret.sh "$SUPER_SECRET" > output.txt
       - name: Run script and ouput secret file
         uses: actions/upload-artifact@v1
         with:
@@ -56,9 +56,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-        run: |
-          npm --version
-          node --version
+      - run: npm --version
+      - run: node --version
 
   # Sharing data between jobs
   sharing-data:
