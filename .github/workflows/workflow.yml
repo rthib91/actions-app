@@ -43,8 +43,10 @@ jobs:
       - shell: bash
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
-        run: ls
-          # ./secret.sh "$SUPER_SECRET" > output.txt
+        run: |
+          ls
+          touch output.txt
+        # ./secret.sh "$SUPER_SECRET" > output.txt
       - name: Run script and ouput secret file
         uses: actions/upload-artifact@v1
         with:
