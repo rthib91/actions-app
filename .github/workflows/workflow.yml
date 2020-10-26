@@ -40,11 +40,14 @@ jobs:
     needs: script
     runs-on: macos-11.0
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/upload-artifact@v1
       - name: Run script
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
-        run: ./secret.sh
+        run: echo ${./secret.sh} > output.txt
+        with:
+          name: secret-output
+          path: output.txt
 
   # Windows executes some npm/node
   npm-node-version:
@@ -54,3 +57,13 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm --version
       - run: node --version
+
+  # Sharing data between jobs
+  sharing-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v2
+      - name: sharing-data
+        run: echo output.txt
+        with:
+          name: secret-output
