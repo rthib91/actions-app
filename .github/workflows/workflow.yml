@@ -40,14 +40,10 @@ jobs:
     needs: script
     runs-on: macos-11.0
     steps:
-      - shell: bash
+      - uses: actions/checkout@v2
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
-        run: |
-          pwd
-          ls ..
-          touch output.txt
-        # ./secret.sh "$SUPER_SECRET" > output.txt
+        run: ./secret.sh "$SUPER_SECRET" > output.txt
       - name: Run script and ouput secret file
         uses: actions/upload-artifact@v1
         with:
