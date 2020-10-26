@@ -68,6 +68,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: secret-output
-      - name: echo shared data
+      - name: cat shared data
         shell: bash
-        run: echo output.txt
+        run: cat output.txt
