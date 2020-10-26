@@ -71,3 +71,15 @@ jobs:
       - name: cat shared data
         shell: bash
         run: cat output.txt
+
+  # Using default ENV variables
+  default-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: default-env
+      - shell: bash
+        run: |
+          echo "$GITHUB_ACTOR started this script"
+          echo "$HOME is my home"
+          echo "$GITHUB_REPOSITORY is the repository name"
+          echo "$GITHUB_REF is the branch that triggered the workflow"
