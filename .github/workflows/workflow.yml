@@ -44,7 +44,8 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
         run: |
-          ls
+          pwd
+          ls ..
           touch output.txt
         # ./secret.sh "$SUPER_SECRET" > output.txt
       - name: Run script and ouput secret file
