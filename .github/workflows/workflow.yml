@@ -44,8 +44,7 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.SECRET }}
         run: ./secret.sh "$SUPER_SECRET" > output.txt
-      - name: Run script and ouput secret file
-        uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v1
         with:
           name: secret-output
           path: output.txt
