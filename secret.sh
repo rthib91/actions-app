@@ -1,6 +1,6 @@
 #!/bin/bash
 
-secret=$1
+secret="$1"
 
 # Trying to echo secret
 echo "$secret"
