@@ -36,7 +36,7 @@ jobs:
 
   # Job needs earlier job
   # Uses secret from GitHub repository
-  needs-script:
+  uses-secret:
     needs: script
     runs-on: macos-11.0
     steps:
@@ -62,9 +62,12 @@ jobs:
   # Sharing data between jobs
   sharing-data:
     runs-on: ubuntu-latest
+    needs: uses-secret
     steps:
-      - uses: actions/download-artifact@v2
       - name: sharing-data
-        run: echo output.txt
+        uses: actions/download-artifact@v2
         with:
           name: secret-output
+      - name: echo shared data
+        shell: bash
+        run: echo output.txt
