@@ -1,0 +1,13 @@
+name: Trigger
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  trigger-main-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: cURL
+        run: ./api-trigger.sh
