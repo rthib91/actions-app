@@ -7,6 +7,8 @@ on:
 jobs:
   trigger-main-workflow:
     runs-on: ubuntu-latest
+    env:
+      TOKEN: ${{ secrets.API_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: cURL
