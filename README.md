@@ -2,4 +2,4 @@
 
 https://github.com/rthib91/actions-app/.github/worflows/workflow.yml/badge.svg
 
-![Demo workflow](https://github.com/rthib91/actions-app/workflows/workflow/badge.svg)
+![Demo workflow](https://github.com/rthib91/actions-app/.github/worflows/workflow.yml/badge.svg)
