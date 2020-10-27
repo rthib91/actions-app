@@ -8,6 +8,16 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'name'
+        required: true
+        default: 'remi'
+      home:
+        description: 'home dir'
+        required: true
+        default: /Users/remi
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -102,3 +112,9 @@ jobs:
     steps:
     - run: echo ${{needs.create-outputs.outputs.output1}} ${{needs.create-outputs.outputs.output2}}
 
+  manually-triggered:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Hello ${{ github.event.inputs.name}}!"
+        echo "Is your home really ${{ github.event.inputs.home }}?"
