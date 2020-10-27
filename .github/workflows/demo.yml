@@ -116,5 +116,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.name}}!"
-        echo "Is your home really ${{ github.event.inputs.home }}?"
+        echo "Hello ${{ github.event.inputs.name}} !"
+        echo "Is your home really ${{ github.event.inputs.home }} ?"
